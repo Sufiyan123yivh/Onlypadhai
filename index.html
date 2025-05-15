@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access JEE study materials, videos, and notes - Learning platform">
+    <meta name="keywords" content="JEE, IIT, education, online learning">
+    <title>GET APKS Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary-color: #5A4BDA;
+            --primary-rgb: 90, 75, 218;
+            --primary-hover: #4A3BC8;
+            --secondary-color: #6D61E7;
+            --secondary-rgb: 109, 97, 231;
+            --accent-color: #F972B9;
+            --accent-rgb: 249, 114, 185;
+            
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-tertiary: #999999;
+            
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F5F7FA;
+            --bg-tertiary: #EAEDF3;
+            
+            --card-bg: #FFFFFF;
+            --card-border: #EAEDF3;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 5px rgba(0, 0, 0, 0.05);
+            --card-shadow-hover: 0 12px 24px rgba(90, 75, 218, 0.12), 0 4px 8px rgba(90, 75, 218, 0.08);
+
+            --skeleton-bg: #F0F0F0;
+            --skeleton-shine: rgba(255, 255, 255, 0.8);
+            
+            --success-color: #10B981;
+            --error-color: #EF4444;
+            --warning-color: #F59E0B;
+            --info-color: #3B82F6;
+            
+            --border-radius-sm: 0.375rem;
+            --border-radius: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            --transition-fast: 150ms ease;
+            --transition: 300ms ease;
+            --transition-slow: 500ms ease;
+
+            --container-width: 1200px;
+            --header-height: 4rem;
+            --footer-height: 3rem;
+            --sidebar-width: 260px;
+            --sidebar-collapsed-width: 70px;
+            
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Dark Mode Variables */
+        .dark-mode {
+            --primary-color: #6D62EE;
+            --primary-rgb: 109, 98, 238;
+            --primary-hover: #7C72F5;
+            --secondary-color: #5A4FCD;
+            --secondary-rgb: 90, 79, 205;
+            
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-tertiary: #999999;
+            
+            --bg-primary: #000000;
+            --bg-secondary: #111111;
+            --bg-tertiary: #222222;
+            
+            --card-bg: #111111;
+            --card-border: #2A2A2A;
+            --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+            --card-shadow-hover: 0 10px 20px rgba(109, 98, 238, 0.2), 0 6px 10px rgba(109, 98, 238, 0.15);
+
+            --skeleton-bg: #222222;
+            --skeleton-shine: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* App Layout */
+        .app-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--header-height);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        /* Header */
+        .app-header {
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--card-border);
+            padding: 0.75rem 0;
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            right: 0;
+            z-index: 1000;
+            width: calc(100% - var(--sidebar-width));
+            transition: left var(--transition), width var(--transition);
+        }
+
+        .app-header.extended {
+            left: var(--sidebar-collapsed-width);
+            width: calc(100% - var(--sidebar-collapsed-width));
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .app-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .app-logo:hover {
+            color: var(--primary-hover);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing);
+            align-items: center;
+        }
+
+        .theme-toggle {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            transition: background-color var(--transition-fast), color var(--transition-fast);
+            border: none;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: var(--sidebar-width);
+            background-color: var(--bg-primary);
+            border-right: 1px solid var(--card-border);
+            z-index: 1030;
+            transition: transform var(--transition), width var(--transition);
+            overflow-y: auto;
+            padding-top: 0;
+        }
+
+        .sidebar.collapsed {
+            width: var(--sidebar-collapsed-width);
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem var(--spacing-md);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .sidebar-logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .sidebar-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+            transition: background-color var(--transition-fast);
+        }
+
+        .sidebar-toggle:hover {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: var(--spacing) 0;
+        }
+
+        .sidebar-menu-item {
+            padding: var(--spacing) var(--spacing-md);
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+            cursor: pointer;
+            border-radius: var(--border-radius-sm);
+            margin: 0.25rem var(--spacing-sm);
+        }
+
+        @media (max-width: 992px) {
+            .sidebar-menu-item {
+                padding: var(--spacing-md) var(--spacing-md);
+            }
+        }
+
+        .sidebar-menu-item:hover, .sidebar-menu-item.active {
+            background-color: var(--bg-secondary);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .sidebar-menu-item.active {
+            border-left: 3px solid var(--primary-color);
+            background-color: rgba(var(--primary-rgb), 0.1);
+        }
+
+        .sidebar-menu-item .menu-icon {
+            width: 1.5rem;
+            text-align: center;
+            margin-right: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .sidebar-menu-item .menu-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Added styles for Coming Soon section */
+        .sidebar-menu-divider {
+            padding: var(--spacing) var(--spacing-md);
+            margin-top: var(--spacing);
+            border-top: 1px solid var(--card-border);
+        }
+
+        .menu-section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sidebar-menu-item.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .sidebar-menu-item.disabled:hover {
+            background-color: transparent;
+            color: var(--text-secondary);
+        }
+
+        .sidebar-menu-item.disabled:after {
+            content: "Coming Soon";
+            position: absolute;
+            right: var(--spacing-md);
+            font-size: 0.7rem;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.1rem 0.4rem;
+            border-radius: var(--border-radius-sm);
+            opacity: 0.8;
+        }
+
+        .sidebar.collapsed .sidebar-menu-item .menu-text {
+            display: none;
+        }
+
+        .sidebar.collapsed .sidebar-logo-text {
+            display: none;
+        }
+
+        /* Main Content with Sidebar */
+        .content-wrapper {
+            margin-left: var(--sidebar-width);
+            transition: margin-left var(--transition);
+            padding-top: calc(var(--header-height) - 0.75rem);
+        }
+
+        .content-wrapper.extended {
+            margin-left: var(--sidebar-collapsed-width);
+        }
+
+        /* Mobile Sidebar */
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                width: 85%;
+                max-width: 300px;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .content-wrapper {
+                margin-left: 0;
+            }
+            
+            .content-wrapper.extended {
+                margin-left: 0;
+            }
+            
+            .app-header {
+                left: 0;
+                width: 100%;
+                padding-left: var(--spacing);
+            }
+            
+            .app-header.extended {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        /* Menu Toggle for Mobile */
+        .navbar-toggler {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            padding: var(--spacing-sm);
+            cursor: pointer;
+            min-width: 42px;
+            min-height: 42px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: background-color var(--transition-fast);
+            display: none; /* Hidden by default */
+        }
+        
+        .navbar-toggler:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        @media (max-width: 992px) {
+            .navbar-toggler {
+                display: flex; /* Show on mobile */
+            }
+        }
+
+        /* Sidebar Backdrop */
+        .sidebar-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1020;
+            display: none;
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .sidebar-backdrop.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--card-border);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+            align-self: flex-start;
+            margin-top: auto;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .card-btn:hover {
+            background-color: var(--primary-hover);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Grid System */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+        }
+
+        [class*="col-"] {
+            padding: 0 1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            
+            .g-4 {
+                margin: 0 -1rem;
+            }
+            
+            .g-4 > div {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: var(--spacing-sm);
+            }
+
+            .app-logo {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-toggler {
+                display: flex;
+                padding: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            
+            .theme-toggle {
+                width: 2rem;
+                height: 2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="d-flex align-items-center">
+                        <button id="mobileSidebarToggle" class="navbar-toggler me-2" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <a href="/" class="app-logo">StudyRays Network</a>
+                    </div>
+                    <div class="header-actions">
+                        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Backdrop -->
+        <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+        
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="sidebar-logo">
+                    <span class="sidebar-logo-text">StudyRays Network</span>
+                </a>
+                <button id="toggleSidebar" class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item active" onclick="window.location.href='/'">
+                    <i class="fas fa-home menu-icon"></i>
+                    <span class="menu-text">Home</span>
+                </li>
+                <li class="sidebar-menu-item" onclick="window.location.href='/apni-kaksha'">
+                    <i class="fas fa-graduation-cap menu-icon"></i>
+                    <span class="menu-text">Apni Kaksha</span>
+                </li>
+                <li class="sidebar-menu-item" onclick="window.location.href='/iit'">
+                    <i class="fas fa-school menu-icon"></i>
+                    <span class="menu-text">IIT School</span>
+                </li>
+                
+                <li class="sidebar-menu-item" onclick="window.location.href='/nt'">
+                    <i class="fas fa-user-graduate menu-icon"></i>
+                    <span class="menu-text">Next Toppers</span>
+                </li>
+                
+                 <li class="sidebar-menu-item" onclick="window.location.href='/vidyakul'">
+    <i class="fas fa-graduation-cap menu-icon"></i>
+    <span class="menu-text">Vidyakul</span>
+</li>
+
+ <li class="sidebar-menu-item" onclick="window.location.href='/motion'">
+              <i class="fas fa-arrows-alt menu-icon"></i>
+                    <span class="menu-text">Motion</span>
+                </li>
+                
+               <li class="sidebar-menu-item" onclick="window.location.href='/cw'">
+              <i class="fas fa-cogs menu-icon"></i>
+                    <span class="menu-text">CW</span>
+                </li>
+                  
+                   <li class="sidebar-menu-item" onclick="window.location.href='/kgs'">
+              <i class="fas fa-pen-alt menu-icon"></i>
+                    <span class="menu-text">KGS</span>
+                </li>
+ 
+ 
+  <li class="sidebar-menu-item" onclick="window.location.href='/allen'">
+             <i class="fas fa-book-open menu-icon"></i>
+
+                    <span class="menu-text">Allen</span>
+                </li>
+
+  <li class="sidebar-menu-item" onclick="window.location.href='https://uc.streamfiles.eu.org'">
+<i class="fas fa-university menu-icon"></i>
+
+
+                    <span class="menu-text">Unacademy</span>
+                </li>
+
+            </ul>
+        </aside>
+
+        <main class="content-wrapper main-content" id="content">
+<div class="container">
+    <div class="responsive-heading">
+        <h1>Are You Okay?</h1>
+    </div>
+    
+    <div class="telegram-button-container">
+        <a href="https://t.me/getapks1" target="_blank" class="telegram-button">
+            <i class="fab fa-telegram-plane"></i> Join Official Telegram
+        </a>
+    </div>
+    
+    <div class="row">
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="allen/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvaJMaCtx0exwrtEvIzdfopHdsoKOp7qLDg&s" class="card-img-top platform-img" alt="Allen" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Allen</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="https://uc.streamfiles.eu.org/index.php" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3I8MHCoQwIr7JRNGJofutnnyXyD12S0aRBw&s" class="card-img-top platform-img" alt="Unacademy" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Unacademy</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="apni-kaksha/index.php" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/dmbgsqIliQgohOVI-uD5NrexgkEQJbI_4-JmDB5TC6YbRdDnTiQd4APiZ5hIrw2SSga2" class="card-img-top platform-img" alt="Apni Kaksha" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Apni Kaksha</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="iit/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/yDbYO4hGfI48CwRgPdIOTMy3KtITjRKSYviAEIbJxzhySDJxidBswMLWharzu7Kekg" class="card-img-top platform-img" alt="IIT School" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">IIT School</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="motion/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/GEucuhu6bsxw8ogG1PJbIPnEMfX45CbmRy8CKtPRGdlV_IZedvRDgbVXUOpotEUFq6A" class="card-img-top platform-img" alt="Motion Learning" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Motion Learning</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="cw/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/kEa-ftsB33wVBeS3EDFZHlDN3FMKTEJ8KgBDz39WspreIt7QD07Hy4SAbUPDWXl1Li96" class="card-img-top platform-img" alt="Carrer Will" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Carrer Will</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="kgs/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://khanglobalstudies.com/Images/logos/logo.avif" class="card-img-top platform-img" alt="KGS" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">KGS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="nt/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/-tLt6jjKIAtTLDpeIYkQrZ-mLr0xAi1UICQ-Xhw_psDWHLF7hSnl80wqBA2ckKdjF7aU" class="card-img-top platform-img" alt="Next Toppers" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Next Toppers</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+                <div class="col-6 col-lg-3 mb-4">
+            <a href="vidyakul/" class="card-link">
+                <div class="card">
+                    <div class="platform-img-container">
+                        <div class="spinner-container">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="https://play-lh.googleusercontent.com/Olc5gspdFsxZRl8MmOlg2FPh8TXapqTIY2o7EnmFymRhpn0Ueg1qekqiYpYbsiz20A" class="card-img-top platform-img" alt="Vidyakul" onload="this.classList.add('loaded')">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Vidyakul</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+            </div>
+</div>
+
+<style>
+    .responsive-heading {
+        text-align: center;
+        margin: 0.5rem 0 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .responsive-heading h1 {
+        font-size: calc(1.5rem + 1.5vw);
+        font-weight: bold;
+        color: var(--primary-color, #333);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        padding: 0;
+        letter-spacing: -0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .responsive-heading h1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 120%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: shine 2.5s infinite;
+    }
+    
+    @keyframes shine {
+        0% {
+            left: -150%;
+        }
+        100% {
+            left: 150%;
+        }
+    }
+    
+    .platform-img-container {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 15px auto 5px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    .spinner-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color, #4a90e2);
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+    }
+    
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    .platform-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary-color);
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+    }
+    
+    .platform-img.loaded {
+        opacity: 1;
+    }
+    
+    .platform-img.loaded + .spinner-container {
+        opacity: 0;
+    }
+    
+    .card {
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .card:hover .platform-img {
+        transform: scale(1.05);
+    }
+    
+    .card-body {
+        padding: 1rem 1.25rem;
+        text-align: center;
+    }
+    
+    .card-title {
+        margin: 0 0 10px 0;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .card-link:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .telegram-button-container {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .telegram-button {
+        display: inline-block;
+        background-color: #0088cc;
+        color: white;
+        font-weight: bold;
+        padding: 12px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .telegram-button i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+        vertical-align: middle;
+    }
+    
+    .telegram-button:hover {
+        background-color: #0077b5;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .telegram-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media (max-width: 576px) {
+        .responsive-heading h1 {
+            font-size: calc(1.2rem + 2vw);
+        }
+        
+        .responsive-heading {
+            margin: 0.3rem 0 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .card-text {
+            font-size: 0.9rem;
+        }
+        .platform-img-container {
+            height: 90px;
+            width: 90px;
+            margin: 12px auto 5px;
+        }
+        
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border-width: 3px;
+        }
+        
+        .telegram-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Fix for images that might be cached and load before JS runs
+        const images = document.querySelectorAll('.platform-img');
+        images.forEach(img => {
+            if (img.complete) {
+                img.classList.add('loaded');
+            }
+        });
+    });
+</script>
+
+</main>
+<center>
+    <img src="https://hits.technfetch.in/badge.php?url=https%3A%2F%2Fiitschool.cc&label=STUDYRAYS%20NETWORK%20&style=square&labelColor=da1b1b&countColor=222622&showToday=true" alt="STUDYRAYS NETWORK  counter">
+</center>
+<footer class="app-footer">
+    <div class="container-fluid">
+        <div class="footer-content">
+            <div class="footer-text">
+                &copy; 2024 - 2025 StudyRays Network. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<style>
+    .app-footer {
+        background-color: var(--bg-primary);
+        border-top: 1px solid var(--card-border);
+        padding: 1rem 0;
+        margin-top: 2rem;
+        width: 100%;
+        position: relative;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    
+    .app-footer .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width: 992px) {
+        .app-footer {
+            margin-top: 1.5rem;
+            padding: 0.75rem 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .app-footer .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .footer-text {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggling
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
+
+    // Check saved theme
+    if (localStorage.getItem('darkMode') === 'true') {
+        body.classList.add('dark-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        // Toggle icon
+        if (body.classList.contains('dark-mode')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('darkMode', 'false');
+        }
+    });
+
+    // Sidebar toggling
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('toggleSidebar');
+    const contentWrapper = document.getElementById('content');
+    const header = document.querySelector('.app-header');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+    const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+    
+    // Handle regular sidebar toggle (desktop)
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            contentWrapper.classList.toggle('extended');
+            header.classList.toggle('extended');
+            
+            // Change toggle icon direction
+            const icon = sidebarToggle.querySelector('i');
+            if (sidebar.classList.contains('collapsed')) {
+                icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+            } else {
+                icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+            }
+        });
+    }
+    
+    // Handle mobile sidebar toggle
+    if (mobileSidebarToggle) {
+        mobileSidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('show');
+            sidebarBackdrop.classList.toggle('show');
+            document.body.style.overflow = sidebar.classList.contains('show') ? 'hidden' : '';
+        });
+    }
+    
+    // Close sidebar when clicking outside on mobile
+    if (sidebarBackdrop) {
+        sidebarBackdrop.addEventListener('click', function() {
+            sidebar.classList.remove('show');
+            sidebarBackdrop.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+    }
+    
+    // Close sidebar on mobile when window is resized to desktop size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992 && sidebar.classList.contains('show')) {
+            sidebar.classList.remove('show');
+            sidebarBackdrop.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Handle sidebar menu items that aren't disabled
+    const menuItems = document.querySelectorAll('.sidebar-menu-item:not(.disabled)');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (window.innerWidth <= 992) {
+                sidebar.classList.remove('show');
+                sidebarBackdrop.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>  
