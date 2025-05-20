@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Resources</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* For bold title */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap'); /* For button text */
+
         body {
             font-family: 'Montserrat', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(135deg, #f0f2f0, #e0e0e0);
+            /* Dark background */
+            background-color: #333; /* Dark grey */
+            color: #f0f0f0; /* Light text color */
             min-height: 100vh;
             margin: 0;
             padding: 30px;
@@ -22,7 +25,7 @@
         .page-title {
             font-family: 'Montserrat', sans-serif; /* Use Montserrat for the title */
             font-weight: 700; /* Make it bold */
-            font-size: 2.5em; /* Adjust size as needed */
+            font-size: 2em; /* Reduced font size */
             margin-bottom: 30px;
             letter-spacing: 2px; /* Add some spacing between letters */
             text-transform: uppercase; /* Make it uppercase */
@@ -42,8 +45,10 @@
             margin-bottom: 30px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Darker shadow for dark background */
             transition: transform 0.3s ease-in-out;
+            background-color: #444; /* Slightly lighter background for the container */
+            padding: 10px; /* Add some padding around the image */
         }
 
         .image-container:hover {
@@ -74,32 +79,32 @@
             border: none;
             border-radius: 30px;
             color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Darker shadow for buttons */
             transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         .study-button {
-            background-color: #2ecc71;
+            background-color: #27ae60; /* Darker green */
         }
 
         .tutorial-button {
-            background-color: #3498db;
+            background-color: #2980b9; /* Darker blue */
         }
 
         .study-button:hover, .tutorial-button:hover {
             background-color: #1e8449;
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25); /* Darker hover shadow */
         }
 
         .study-button:active, .tutorial-button:active {
             transform: translateY(0);
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.25); /* Darker active shadow */
         }
     </style>
 </head>
 <body>
-    <h1 class="page-title">PW</h1>
+    <h3 class="page-title">PHYSICSWAALAH</h3>
     <div class="image-container">
         <img src="https://i.ibb.co/yJTW9YJ/x.jpg" alt="alpha cbseImage" class="medium-image">
     </div>
