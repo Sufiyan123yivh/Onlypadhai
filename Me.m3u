@@ -1,12 +1,4 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="0" tvg-logo="https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/joker_verse.png" group-title="JOKER VERSE",JOKER VERSE
-https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/activated_hls/activated.m3u8
-#EXTINF:-1 tvg-id="-1" tvg-logo="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" group-title="JOKER VERSE",Name
-https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/activated_hls/activated.m3u8
-#EXTINF:-1 tvg-id="-2" tvg-logo="https://logos-world.net/wp-content/uploads/2023/07/Threads-Logo.png" group-title="JOKER VERSE",Username
-https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/activated_hls/activated.m3u8
-#EXTINF:-1 tvg-id="-3" tvg-logo="https://symbl-world.akamaized.net/i/webp/23/d9ebf5575c2d6343b1ab16003f6ffc.webp" group-title="JOKER VERSE",UID
-https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/activated_hls/activated.m3u8
 #EXTINF:-1 tvg-id="-4" tvg-logo="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678116-calendar-512.png" group-title="JOKER VERSE",Expiry
 https://raw.githubusercontent.com/GitCoderKD/cdn/refs/heads/main/expired_hls/expired.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="GOLF",•●★--- Welcome ----★●•
