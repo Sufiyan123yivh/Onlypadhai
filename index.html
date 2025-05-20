@@ -1,374 +1,316 @@
+<!DOCTYPE html>
 <html lang="en">
- <head> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <meta charset="UTF-8"> 
-  <title>PW THOR</title> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <style>
-    body { margin: 0; font-family: 'Poppins', sans-serif; background: #0e0f1b; color: white; }
-    .header { background: #11132a; color: #ffc107; font-size: 1.8rem; text-transform: uppercase; padding: 1rem; text-align: center; font-weight: 600; }
-    .grid { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; justify-content: center; }
-    .card { background: #1e2036; padding: 1rem; border-radius: 10px; width: 250px; cursor: pointer; transition: 0.3s; }
-    .card:hover { background: #2a2e4b; transform: translateY(-5px); }
-    .card img { width: 100%; border-radius: 10px; }
-    .card-title { margin-top: 0.5rem; font-weight: bold; text-align: center; }
-    .section { padding: 1rem; }
-    .btn { background: linear-gradient(90deg, #ffc107, #ff9800); color: #111; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; }
-    .btn:hover { transform: scale(1.05); }
-    .hidden { display: none; }
-    input { background: #15162b; color: white; border: 1px solid #3a3d5c; padding: 0.6rem 1rem; font-size: 1rem; border-radius: 8px; width: 80%; max-width: 400px; }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>GET APK'S NETWORK</b></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GET APK'S Network is your go-to platform for quality education. Access study materials, attend live classes, and enhance your learning experience—all in one place. Join us today!">
+<meta name="keywords" content="GET APKS Network, online learning, study materials, free courses, educational platform, e-learning, student resources, best study materials, live classes, learn online">
 
-    .loader {
-      border: 6px solid rgba(255, 255, 255, 0.1);
-      border-top: 6px solid #ffc107;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 0.8s ease-in-out infinite;
-      margin: 2rem auto;
-      box-shadow: 0 0 15px #ffc10788;
-    }
+<link href='[suspicious link removed]' type='image/x-icon' rel='icon'/><link href='[suspicious link removed]' type='image/x-icon' rel='shortcut icon'/>
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style> 
- </head> 
- <body> 
-  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.5rem;"> 
-   <img src="ChatGPT Image May 7, 2025, 08_57_25 PM.png" alt="PW THOR Logo" style="height: 60px;"> 
-   <h1 style="color: #ffc107; font-size: 2rem; margin: 0;">PW THOR</h1> 
-  </div> 
-  <div class="hidden" id="backBtn" style="padding: 1rem; cursor: pointer; color: gold; font-size: 1.2rem;">
-   ← Back
-  </div> 
-  <div id="searchBarWrapper" style="padding: 1rem; text-align: center;"> 
-   <input id="searchInput" placeholder="Search batch by name..."> 
-  </div> 
-  <div id="batchLoader" class="loader hidden"></div> 
-  <div id="subjectLoader" class="loader hidden"></div> 
-  <div id="topicLoader" class="loader hidden"></div> 
-  <div class="grid" id="main">
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/885724d1-5548-4e71-a2ed-b3fd30ec7869.jpg" alt="PARISHRAM 2026 (Class 12th)">
-    <div class="card-title">
-     PARISHRAM 2026 (Class 12th)
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f5255148-c044-406f-abf1-e8a1530e1423.jpg" alt="Arjuna JEE 2026">
-    <div class="card-title">
-     Arjuna JEE 2026
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/b0fd6211-8861-469d-b446-e16295ddb6c4.jpg" alt="LAKSHYA JEE 2026">
-    <div class="card-title">
-     LAKSHYA JEE 2026
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/c89c4a74-374c-44e5-9041-ffe88aa3746a.jpg" alt="Arjuna NEET 2026">
-    <div class="card-title">
-     Arjuna NEET 2026
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/f8044c91-1f35-4b29-9dde-b4dca8d3e75e.jpg" alt="Lakshya NEET 2026">
-    <div class="card-title">
-     Lakshya NEET 2026
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/50118566-00d9-4507-b514-7b86a226caf8.png" alt="Udaan 2026 (Class 10th)">
-    <div class="card-title">
-     Udaan 2026 (Class 10th)
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/98f12be3-f019-4c95-b4d8-0b8347f007e3.jpg" alt="NEEV 2026 (Class 9th)">
-    <div class="card-title">
-     NEEV 2026 (Class 9th)
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/55cc6a84-c016-4705-8e1c-e279c0b2e41b.png" alt="UDAY 2026 (Class 11th)">
-    <div class="card-title">
-     UDAY 2026 (Class 11th)
-    </div>
-   </div>
-   <div class="card">
-    <img src="https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/a6c8595b-fd38-497f-a547-9c94be65948e.jpg" alt="Prayas JEE 2026">
-    <div class="card-title">
-     Prayas JEE 2026
-    </div>
-   </div>
-  </div> 
-  <div class="grid hidden" id="subjects"></div> 
-  <div class="section hidden" id="topics"></div> 
-  <script>
-let batchOffset = 0;
-const batchLimit = 10;
-let allBatches = [];
-let isLoading = false;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-const main = document.getElementById('main');
-const subjectsDiv = document.getElementById('subjects');
-const topicsDiv = document.getElementById('topics');
-const backBtn = document.getElementById('backBtn');
-const searchBarWrapper = document.getElementById('searchBarWrapper');
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
-let currentView = 'main';
-let prevState = [];
+    <style>
+        /* Reset and Base Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa; /* Changed background color */
+            color: #333;
+            line-height: 1.6;
+        }
 
-function showView(view) {
-  main.classList.add('hidden');
-  subjectsDiv.classList.add('hidden');
-  topicsDiv.classList.add('hidden');
-  searchBarWrapper.style.display = view === 'main' ? '' : 'none';
+        /* Header */
+        body {
+            padding-top: 0px; /* Remove extra space */
+        }
 
-  if (view === 'main') main.classList.remove('hidden');
-  else if (view === 'subjects') subjectsDiv.classList.remove('hidden');
-  else if (view === 'topics') topicsDiv.classList.remove('hidden');
+        .main-content {
+            padding: 60px 20px 20px; /* Adjusted for fixed header */
+        }
 
-  backBtn.classList.toggle('hidden', view === 'main');
-  currentView = view;
-}
+        header {
+            background: linear-gradient(to right, #6495ED, #4682B4); /* Gradient header */
+            padding: 0.75rem 20px; /* Adjusted padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            height: 50px; /* Slightly increased height */
+            width: calc(100% - 40px); /* More margin on the sides */
+            position: fixed;
+            top: 15px; /* Adjusted top margin */
+            left: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
 
-backBtn.onclick = () => {
-  const lastView = prevState.pop();
-  if (lastView) showView(lastView);
-};
+        .header-title {
+            font-size: 1.3em; /* Slightly larger title */
+            font-weight: 600; /* Semi-bold */
+            color: #fff; /* White text on the gradient */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+        }
 
-function renderBatches() {
-  if (isLoading) return;
-  isLoading = true;
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff; /* White background for the icon */
+            color: #6495ED; /* Blue icon color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-  const end = batchOffset + batchLimit;
-  const slice = allBatches.slice(batchOffset, end);
-  slice.forEach(data => {
-    const div = document.createElement('div');
-    div.className = 'card';
-    div.innerHTML = `<img src="${data.image}" alt="${data.name}"><div class="card-title">${data.name}</div>`;
-    div.onclick = () => {
-      prevState.push(currentView);
-      loadSubjects(data.key);
-    };
-    main.appendChild(div);
-  });
+        .notification-icon:hover {
+            background-color: #e0e0e0;
+            color: #336699;
+        }
 
-  batchOffset = end;
-  isLoading = false;
-  document.getElementById('batchLoader').classList.add('hidden');
-}
+        .notification-icon i {
+            font-size: 1.2em;
+        }
 
-async function loadBatches() {
-  document.getElementById('batchLoader').classList.remove('hidden');
-  const res = await fetch('https://sorry-junie-ishaautofilterbot-a45d8912.koyeb.app/data');
-  const json = await res.json();
-  allBatches = Object.entries(json.batches).map(([key, val]) => ({ key, ...val }));
-  renderBatches();
-}
+        .notification-icon .notification-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #ff4d4d; /* Brighter red for count */
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 4px 8px;
+            display: none; /* Hidden by default */
+        }
 
-async function loadSubjects(batchId) {
-  document.getElementById('subjectLoader').classList.remove('hidden');
-  showView('subjects');
-  subjectsDiv.innerHTML = '';
+        .notifications-dropdown {
+            display: none;
+            position: absolute;
+            top: 55px; /* Below the bell icon */
+            right: 0;
+            background-color: white;
+            color: black;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+            width: 300px; /* Slightly wider dropdown */
+            border-radius: 10px;
+            z-index: 1001;
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
 
-  const res = await fetch(`https://sorry-junie-ishaautofilterbot-a45d8912.koyeb.app/data/batches/${batchId}/subjects`);
-  const subjects = await res.json();
+        .notifications-dropdown .notification {
+            padding: 15px;
+            border-bottom: 1px solid #eee; /* Lighter border */
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-  document.getElementById('subjectLoader').classList.add('hidden');
-  subjects.forEach(subject => {
-    const div = document.createElement('div');
-    div.className = 'card';
-    div.innerHTML = `<div class="card-title">${subject.name}</div>`;
-    div.onclick = () => {
-      prevState.push(currentView);
-      loadTopics(batchId, subject.key);
-    };
-    subjectsDiv.appendChild(div);
-  });
-}
+        .notifications-dropdown .notification:last-child {
+            border-bottom: none;
+        }
 
-async function loadTopics(batchId, subjectId) {
-  document.getElementById('topicLoader').classList.remove('hidden');
-  showView('topics');
-  topicsDiv.innerHTML = '';
+        .notifications-dropdown p {
+            margin: 15px;
+            text-align: center;
+            color: #777;
+        }
 
-  const res = await fetch(`https://sorry-junie-ishaautofilterbot-a45d8912.koyeb.app/data/batches/${batchId}/subjects/${subjectId}/topics`);
-  const topics = await res.json();
+        .notifications-dropdown .notification-icon-small {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+        }
 
-  const topicButtonsContainer = document.createElement('div');
-  topicButtonsContainer.className = 'grid';
 
-  const topicContent = document.createElement('div');
-  topicContent.className = 'section';
+        /* Main Content */
+        .main-content {
+            padding: 90px 30px 30px; /* Adjusted for fixed header and more side padding */
+            text-align: center;
+        }
 
-  if (topics.length === 0) {
-    topicButtonsContainer.innerHTML = `
-      <div style="color: gold; text-align: center; font-size: 1.2rem; margin-top: 2rem;">
-        🚫 No lectures, notes, or DPPs are available for this subject.
-      </div>
-    `;
-  } else {
-  topics.forEach(topic => {
-    const button = document.createElement('div');
-    button.className = 'card';
-    button.innerHTML = `<div class="card-title">${topic.name}</div>`;
-    button.onclick = () => {
-      topicButtonsContainer.style.display = 'none';
+        /* Batch Name */
+        .batch-name {
+            font-size: 2.5rem; /* Larger title */
+            font-weight: 700;
+            color: #333;
+            margin: 30px 0 40px; /* Increased spacing */
+            letter-spacing: 0.5px;
+        }
 
-      const tabs = `
-        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
-          <button class="btn" onclick="switchTab('lectures')">Lectures</button>
-          <button class="btn" onclick="switchTab('notes')">Notes</button>
-          <button class="btn" onclick="switchTab('dpps')">DPPs</button>
+        /* Subjects Section */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+            gap: 25px; /* Increased gap */
+            padding: 20px;
+        }
+
+        /* Board Cards */
+        .board-card {
+            text-decoration: none;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More noticeable shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: row; /* Align icon and text horizontally */
+            align-items: center;
+            padding: 20px;
+            gap: 15px; /* Spacing between icon and text */
+        }
+
+        .board-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .board-card p {
+            margin: 0;
+            font-size: 1.1rem; /* Slightly larger font */
+            font-weight: 600;
+            color: #444;
+            text-align: left; /* Align text to the left within the card */
+        }
+
+        .board-card img {
+            width: 50px; /* Slightly larger icon */
+            height: 50px;
+            border-radius: 10px; /* Slightly less rounded for batch icons */
+            object-fit: cover; /* Ensure image fills the container without distortion */
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: #e9ecef; /* Lighter footer background */
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .board-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .batch-name {
+                font-size: 2rem;
+            }
+
+            .board-card {
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .board-card p {
+                font-size: 1rem;
+            }
+
+            .board-card img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .batch-name {
+                font-size: 1.7rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; /* Inherit color from parent for card links */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title"><b>GET APK'S NETWORK</b></div>
+        <div class="notification-icon" onclick="toggleNotifications()">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count" id="notification-count">0</span>
+            <div class="notifications-dropdown" id="notifications-dropdown">
+                <p>No new notifications</p>
+            </div>
         </div>
-      `;
+    </header>
 
-      topicContent.innerHTML = `<h2>${topic.name}</h2>` + tabs;
+    <main class="main-content">
 
-      const lecturesHtml = (topic.lectures || []).map(lecture => `
-        <div style="margin-bottom: 2rem;">
-          <a href="video.php?videoUrl=${encodeURIComponent(lecture.videoUrl)}&title=${encodeURIComponent(lecture.title)}">
-            <img src="${lecture.thumbnail}" style="width:100%; max-width:400px; border-radius:10px; display:block; margin:1rem auto;" />
-          </a>
-          <div style="text-align:center;">${lecture.title}</div>
-          ${(lecture.notes || []).map(note => `<div style="margin-top: 0.5rem;"><a href="${note.fileUrl}" target="_blank" class="btn">${note.title}</a></div>`).join('')}
-          ${(lecture.dpps || []).map(dpp => `<div style="margin-top: 0.5rem;"><a href="${dpp.fileUrl}" target="_blank" class="btn">${dpp.title}</a></div>`).join('')}
+        <h1 class="batch-name">Select Batch <i class="fas fa-chevron-down"></i></h1><br>
+
+        <div class="board-grid">
+            <a href='/next-toppers/'> <div class="board-card">
+                <img src="https://i.ibb.co/NdgwhkC0/x.jpg" alt="NEXT TOPPERS Icon">
+                <p>Next Toppers</p>
+            </div></a>
+
+        <a href="/Physicswaalah.html"> <div class="board-card">
+                <img src="https://i.ibb.co/ycjvLqHk/x.jpg" alt="PW Icon">
+                <p>Physics Wallah</p>
+            </div></a>
         </div>
-      `).join('');
+    </main>
 
-      const notesHtml = (topic.notes || []).map(note => `<div style="margin-top: 1rem;"><a href="${note.fileUrl}" target="_blank" class="btn">${note.title}</a></div>`).join('');
-      const dppsHtml = (topic.dpps || []).map(dpp => `<div style="margin-top: 1rem;"><a href="${dpp.fileUrl}" target="_blank" class="btn">${dpp.title}</a></div>`).join('');
+    <footer>
+        &copy; 2025 GET APK'S NETWORK - All Rights Reserved
+    </footer>
 
-      topicContent.innerHTML += `
-        <div id="lecturesTab">${lecturesHtml}</div>
-        <div id="notesTab" style="display:none;">${notesHtml}</div>
-        <div id="dppsTab" style="display:none;">${dppsHtml}</div>
-      `;
-
-      window.switchTab = function(tabName) {
-        document.getElementById('lecturesTab').style.display = tabName === 'lectures' ? 'block' : 'none';
-        document.getElementById('notesTab').style.display = tabName === 'notes' ? 'block' : 'none';
-        document.getElementById('dppsTab').style.display = tabName === 'dpps' ? 'block' : 'none';
-      };
-    };
-    topicButtonsContainer.appendChild(button);
-  });
-
-  }
-  topicsDiv.appendChild(topicButtonsContainer);
-  topicsDiv.appendChild(topicContent);
-  document.getElementById('topicLoader').classList.add('hidden');
+    <script>
+function toggleNotifications() {
+  const dropdown = document.getElementById("notifications-dropdown");
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
 }
 
-document.getElementById('searchInput').addEventListener('input', function () {
-  const searchTerm = this.value.toLowerCase();
-  const cards = main.getElementsByClassName('card');
-  Array.from(cards).forEach(card => {
-    const title = card.querySelector('.card-title').textContent.toLowerCase();
-    card.style.display = title.includes(searchTerm) ? '' : 'none';
-  });
-});
+function addNotification(message) {
+  const notificationCount = document.getElementById("notification-count");
+  const dropdown = document.getElementById("notifications-dropdown");
 
-window.addEventListener('scroll', () => {
-  if (currentView !== 'main' || isLoading) return;
+  const currentCount = parseInt(notificationCount.textContent, 10);
+  notificationCount.textContent = currentCount + 1;
+  notificationCount.style.display = "inline-block";
 
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
-    document.getElementById('batchLoader').classList.remove('hidden');
-    renderBatches();
+  const newNotification = document.createElement("div");
+  newNotification.className = "notification";
+  newNotification.innerHTML = `<div class="notification-icon-small"><i class="fas fa-info-circle"></i></div><span>${message}</span>`;
+
+  if (dropdown.querySelector("p")) {
+    dropdown.innerHTML = "";
   }
-});
 
-loadBatches();
-</script> 
-  <!-- Updated Popup --> 
-  <div id="popup" style="display: block; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgb(30, 32, 54); color: white; padding: 20px; box-shadow: rgba(255, 193, 7, 0.4) 0px 0px 20px; z-index: 9999; width: 320px; border-radius: 12px; text-align: center;"> 
-   <button onclick="document.getElementById('popup').style.display='none'" style="position: absolute; top: 5px; right: 10px; background: transparent; border: none; font-size: 20px; color: white;">×</button> 
-   <img id="popupImage" src="data:image/jpeg;base64,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" alt="Popup Image" style="max-width: 100%; height: auto; border-radius: 8px;"> 
-   <p id="popupText" style="margin: 15px 0;">if you want any other batch added contact us on telegram</p> 
-   <a id="popupLink" href="https://t.me/pwthorxiityatra" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #ffc107; color: #111; font-weight: bold; text-decoration: none; border-radius: 5px;"> Join Telegram </a> 
-  </div> 
-  <script>
-fetch('https://sorry-junie-ishaautofilterbot-a45d8912.koyeb.app/data')
-  .then(response => response.json())
-  .then(data => {
-    if (data.popup && data.popup.show) {
-      document.getElementById('popupImage').src = data.popup.image;
-      document.getElementById('popupText').textContent = data.popup.text;
-      document.getElementById('popupLink').href = data.popup.link;
-      document.getElementById('popup').style.display = 'block';
-    }
-  })
-  .catch(error => console.error('Error loading popup data:', error));
-</script> 
-  <script>
-// Disable right-click
-document.addEventListener('contextmenu', event => event.preventDefault());
+  dropdown.prepend(newNotification); // Add new notifications to the top
+}
 
-// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-document.addEventListener('keydown', function (event) {
-    if (
-        event.key === "F12" ||
-        (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J')) ||
-        (event.ctrlKey && event.key === 'U')
-    ) {
-        event.preventDefault();
-    }
-});
-
-// Attempt to detect dev tools and redirect
-(function() {
-    const element = new Image();
-    Object.defineProperty(element, 'id', {
-        get: function() {
-            document.location.href = 'about:blank'; // or redirect somewhere
-        }
-    });
-    console.log(element);
-})();
-</script> 
-  <a href="https://t.me/pwthor_support" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"> <img src="download.png" alt="Telegram Support" style="width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);"> </a> 
-
-  <script>
-fetch('/data/batches/-OPk1OsXZnALEXdmEJ1e/subjects/-OPk52mFbPuiIZMqppWQ/topics')
-  .then(res => res.json())
-  .then(topics => {
-    const container = document.getElementById('topics-container');
-
-    topics.forEach(topic => {
-      if (!topic) return;
-
-      const lectures = (topic.lectures || []).filter(item => item !== null);
-      const notes = (topic.notes || []).filter(item => item !== null);
-      const dpps = (topic.dpps || []).filter(item => item !== null);
-
-      if (lectures.length || notes.length || dpps.length) {
-        const topicDiv = document.createElement('div');
-        topicDiv.innerHTML = `<h2>${topic.name}</h2>`;
-
-        if (lectures.length) {
-          topicDiv.innerHTML += '<h3>Lectures</h3><ul>' +
-            (lectures || []).filter(l => l && l.videoUrl).map(lec => `<li>${lec.title}</li>`).join('') + '</ul>';
-        }
-
-        if (notes.length) {
-          topicDiv.innerHTML += '<h3>Notes</h3><ul>' +
-            notes.map(note => `<li>${note.title}</li>`).join('') + '</ul>';
-        }
-
-        if (dpps.length) {
-          topicDiv.innerHTML += '<h3>DPPs</h3><ul>' +
-            dpps.map(dpp => `<li>${dpp.title}</li>`).join('') + '</ul>';
-        }
-
-        container.appendChild(topicDiv);
-      }
-    });
-  });
-</script> 
- </body>
+// Example: Simulate adding notifications with icons
+setTimeout(() => addNotification("Welcome to GET APK'S NETWORK!"), 1000);
+setTimeout(() => addNotification("🚀 New resources added for Next Toppers!"), 3000);
+setTimeout(() => addNotification("🔔 Important announcement regarding PW updates."), 5000);
+    </script>
+</body>
 </html>
