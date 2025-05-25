@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>GET APK'S NETWORK</b></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GET APK'S Network is your go-to platform for quality education. Access study materials, attend live classes, and enhance your learning experience—all in one place. Join us today!">
+<meta name="keywords" content="GET APKS Network, online learning, study materials, free courses, educational platform, e-learning, student resources, best study materials, live classes, learn online">
+
+<link href='[suspicious link removed]' type='image/x-icon' rel='icon'/><link href='[suspicious link removed]' type='image/x-icon' rel='shortcut icon'/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+    <style>
+        /* Reset and Base Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #add8e6; /* Changed background color to light blue */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        body {
+            padding-top: 0px; /* Remove extra space */
+        }
+
+        .main-content {
+            padding: 60px 20px 20px; /* Adjusted for fixed header */
+        }
+
+        header {
+            background: linear-gradient(to right, #6495ED, #4682B4); /* Gradient header */
+            padding: 0.75rem 20px; /* Adjusted padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            height: 50px; /* Slightly increased height */
+            width: calc(100% - 40px); /* More margin on the sides */
+            position: fixed;
+            top: 15px; /* Adjusted top margin */
+            left: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .header-title {
+            font-size: 1.3em; /* Slightly larger title */
+            font-weight: 600; /* Semi-bold */
+            color: #fff; /* White text on the gradient */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff; /* White background for the icon */
+            color: #6495ED; /* Blue icon color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .notification-icon:hover {
+            background-color: #e0e0e0;
+            color: #336699;
+        }
+
+        .notification-icon i {
+            font-size: 1.2em;
+        }
+
+        .notification-icon .notification-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #ff4d4d; /* Brighter red for count */
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 4px 8px;
+            display: none; /* Hidden by default */
+        }
+
+        .notifications-dropdown {
+            display: none;
+            position: absolute;
+            top: 55px; /* Below the bell icon */
+            right: 0;
+            background-color: white;
+            color: black;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+            width: 300px; /* Slightly wider dropdown */
+            border-radius: 10px;
+            z-index: 1001;
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
+
+        .notifications-dropdown .notification {
+            padding: 15px;
+            border-bottom: 1px solid #eee; /* Lighter border */
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notifications-dropdown .notification:last-child {
+            border-bottom: none;
+        }
+
+        .notifications-dropdown p {
+            margin: 15px;
+            text-align: center;
+            color: #777;
+        }
+
+        .notifications-dropdown .notification-icon-small {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+        }
+
+
+        /* Main Content */
+        .main-content {
+            padding: 90px 30px 30px; /* Adjusted for fixed header and more side padding */
+            text-align: center;
+        }
+
+        /* Batch Name */
+        .batch-name {
+            font-size: 2.5rem; /* Larger title */
+            font-weight: 700;
+            color: #333;
+            margin: 30px 0 40px; /* Increased spacing */
+            letter-spacing: 0.5px;
+        }
+
+        /* Subjects Section */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+            gap: 25px; /* Increased gap */
+            padding: 20px;
+        }
+
+        /* Board Cards */
+        .board-card {
+            text-decoration: none;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More noticeable shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: row; /* Align icon and text horizontally */
+            align-items: center;
+            padding: 20px;
+            gap: 15px; /* Spacing between icon and text */
+        }
+
+        .board-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .board-card p {
+            margin: 0;
+            font-size: 1.1rem; /* Slightly larger font */
+            font-weight: 600;
+            color: #444;
+            text-align: left; /* Align text to the left within the card */
+        }
+
+        .board-card img {
+            width: 50px; /* Slightly larger icon */
+            height: 50px;
+            border-radius: 10px; /* Slightly less rounded for batch icons */
+            object-fit: cover; /* Ensure image fills the container without distortion */
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            background: #e9ecef; /* Lighter footer background */
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .board-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .batch-name {
+                font-size: 2rem;
+            }
+
+            .board-card {
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .board-card p {
+                font-size: 1rem;
+            }
+
+            .board-card img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .batch-name {
+                font-size: 1.7rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; /* Inherit color from parent for card links */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title"><b>GET APK'S NETWORK</b></div>
+        <div class="notification-icon" onclick="toggleNotifications()">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count" id="notification-count">0</span>
+            <div class="notifications-dropdown" id="notifications-dropdown">
+                <p>No new notifications</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <h1 class="batch-name">Select Batch <i class="fas fa-chevron-down"></i></h1><br>
+
+        <div class="board-grid">
+            <a href='/next-toppers'> <div class="board-card">
+                <img src="https://i.ibb.co/NdgwhkC0/x.jpg" alt="NEXT TOPPERS Icon">
+                <p>Next Toppers</p>
+            </div></a>
+
+        <a href="/Physicswaalah.html"> <div class="board-card">
+                <img src="https://i.ibb.co/ycjvLqHk/x.jpg" alt="PW Icon">
+                <p>Physics Wallah</p>
+            </div></a>
+        </div>
+    </main>
+
+ <B>   <footer>
+        &copy; 2025 GET APK'S NETWORK - All Rights Reserved
+ </B>   </footer>
+
+    <script>
+function toggleNotifications() {
+  const dropdown = document.getElementById("notifications-dropdown");
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+}
+
+function addNotification(message) {
+  const notificationCount = document.getElementById("notification-count");
+  const dropdown = document.getElementById("notifications-dropdown");
+
+  const currentCount = parseInt(notificationCount.textContent, 10);
+  notificationCount.textContent = currentCount + 1;
+  notificationCount.style.display = "inline-block";
+
+  const newNotification = document.createElement("div");
+  newNotification.className = "notification";
+  newNotification.innerHTML = `<div class="notification-icon-small"><i class="fas fa-info-circle"></i></div><span>${message}</span>`;
+
+  if (dropdown.querySelector("p")) {
+    dropdown.innerHTML = "";
+  }
+
+  dropdown.prepend(newNotification); // Add new notifications to the top
+}
+
+// Example: Simulate adding notifications with icons
+setTimeout(() => addNotification("Welcome to GET APK'S NETWORK!"), 1000);
+setTimeout(() => addNotification("🚀 New resources added for Next Toppers!"), 3000);
+setTimeout(() => addNotification("🔔 Important announcement regarding PW updates."), 5000);
+    </script>
+</body>
+</html>
 
